@@ -1,0 +1,784 @@
+/* ==========================
+   PRINT SETTINGS
+========================== */
+
+@page{
+    size:A4 portrait;
+    margin:6mm;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+    background:#ececec;
+    font-family:"Segoe UI",Arial,sans-serif;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+/* ==========================
+   MODAL
+========================== */
+
+.invoice-overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    padding:20px;
+
+}
+
+.invoice-modal{
+
+    width:920px;
+
+    height:95vh;
+
+    background:#fff;
+
+    border-radius:14px;
+
+    overflow:auto;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+
+}
+
+/* ==========================
+   TOOLBAR
+========================== */
+
+.invoice-toolbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 22px;
+
+    background:#A0522D;
+
+    color:#fff;
+
+}
+
+.invoice-toolbar h2{
+
+    margin:0;
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+.invoice-toolbar button{
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:8px;
+
+    padding:10px 18px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.print-btn{
+
+    background:#F4A460;
+
+    color:#222;
+
+    margin-right:10px;
+
+}
+
+.print-btn:hover{
+
+    background:#ef9640;
+
+}
+
+.close-btn{
+
+    background:#ffffff;
+
+    color:#A0522D;
+
+}
+
+.close-btn:hover{
+
+    background:#efefef;
+
+}
+
+/* ==========================
+   PAPER
+========================== */
+
+
+.invoice-paper{
+
+    width:210mm;
+
+    min-height:297mm;
+
+    margin:auto;
+
+    padding:4mm;
+
+    background:#fff;
+
+    color:#333;
+
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    border:1px solid #DCC7B7;
+
+}
+
+.company-section{
+
+    display:flex;
+
+    flex:1;
+
+    padding:8px 10px;
+
+}
+
+.logo-box{
+
+    width:75px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+}
+
+.logo-box img{
+
+    width:60px;
+
+    object-fit:contain;
+
+}
+
+.company-details{
+
+    margin-left:15px;
+
+}
+
+.company-details h1{
+
+    margin:0 0 4px;
+
+    color:#7A4A29;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.company-details div{
+
+    margin-bottom:2px;
+
+    font-size:11px;
+
+}
+
+.invoice-heading{
+
+    width:240px;
+
+    border-left:1px solid #DCC7B7;
+
+}
+
+.invoice-heading h2{
+
+    margin:0;
+
+    padding:8px;
+
+    background:#A0522D;
+
+    color:#fff;
+
+    text-align:center;
+
+    font-size:20px;
+
+}
+
+.invoice-heading table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.invoice-heading td{
+
+    padding:6px 10px;
+
+    border-top:1px solid #E5D6CB;
+
+    font-size:12px;
+
+}
+
+.invoice-heading td:first-child{
+
+    font-weight:600;
+
+    color:#666;
+
+}
+
+.header-strip{
+
+    height:3px;
+
+    background:#F4A460;
+
+    margin-bottom:8px;
+
+}
+
+/* ==========================
+   CUSTOMER
+========================== */
+
+.customer-wrapper{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:8px;
+
+    margin-bottom:8px;
+
+}
+
+.customer-box{
+
+    border:1px solid #DCC7B7;
+
+}
+
+.section-title{
+
+    background:#FAF2EA;
+
+    color:#7A4A29;
+
+    font-weight:700;
+
+    padding:6px 10px;
+
+    border-bottom:1px solid #DCC7B7;
+
+    font-size:12px;
+
+}
+
+.info-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.info-table td{
+
+    padding:5px 10px;
+
+    font-size:11px;
+
+}
+
+.info-table td:first-child{
+
+    width:42%;
+
+    color:#666;
+
+    font-weight:600;
+
+}
+
+.value{
+
+    font-weight:500;
+
+}
+
+/* ==========================
+   ITEM TABLE
+========================== */
+
+.items-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-bottom:8px;
+
+}
+
+.items-table th{
+
+    background:#A0522D;
+
+    color:#fff;
+
+    padding:6px;
+
+    font-size:11px;
+
+}
+
+.items-table td{
+
+    border:1px solid #E5D6CB;
+
+    padding:5px 6px;
+
+    font-size:11px;
+
+}
+
+.items-table tbody tr:nth-child(even){
+
+    background:#FCFAF8;
+
+}
+
+.total-row{
+
+    background:#F7EFE8;
+
+    font-weight:700;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+.fw-bold{
+
+    font-weight:700;
+
+}
+
+/* ==========================
+   SUMMARY
+========================== */
+
+.summary-wrapper{
+
+    display:grid;
+
+    grid-template-columns:58% 42%;
+
+    gap:8px;
+
+    margin-bottom:8px;
+
+}
+
+.tax-summary{
+
+    border:1px solid #DCC7B7;
+
+}
+
+.summary-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.summary-table th{
+
+    background:#F8F2EC;
+
+    padding:5px;
+
+    font-size:10px;
+
+}
+
+.summary-table td{
+
+    border:1px solid #E7DBD2;
+
+    padding:4px;
+
+    font-size:10px;
+
+}
+
+.invoice-summary{
+
+    border:1px solid #DCC7B7;
+
+}
+
+.invoice-summary table{
+
+    width:100%;
+
+}
+
+.invoice-summary td{
+
+    padding:6px 10px;
+
+    font-size:11px;
+
+}
+
+.invoice-summary td:last-child{
+
+    text-align:right;
+
+    font-weight:600;
+
+}
+
+.grand-total-box{
+
+    margin:6px;
+
+    padding:8px;
+
+    background:#A0522D;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+}
+
+/* ==========================
+   AMOUNT WORDS
+========================== */
+
+.amount-words{
+
+    border:1px solid #DCC7B7;
+
+    padding:6px 10px;
+
+    margin-bottom:8px;
+
+    background:#FFFDFB;
+
+    font-size:11px;
+
+    line-height:1.7;
+
+}
+
+.amount-words strong{
+
+    color:#7A4A29;
+
+}
+
+/* ==========================
+   BOTTOM
+========================== */
+
+.bottom-wrapper{
+
+    display:grid;
+
+    grid-template-columns:60% 40%;
+
+    gap:8px;
+
+}
+
+.bank-box,
+.signature-box{
+
+    border:1px solid #DCC7B7;
+
+}
+
+.bank-content{
+
+    display:flex;
+
+}
+
+.qr-section{
+
+    width:100px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-right:1px solid #DCC7B7;
+
+    padding:8px;
+
+}
+
+.qr-placeholder{
+
+    color:#999;
+
+    font-size:11px;
+
+}
+
+.bank-info{
+
+    flex:1;
+
+}
+
+.bank-info table{
+
+    width:100%;
+
+}
+
+.bank-info td{
+
+    padding:6px 10px;
+
+    font-size:11px;
+
+}
+
+.bank-info td:first-child{
+
+    width:35%;
+
+    font-weight:600;
+
+    color:#666;
+
+}
+
+.signature-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    min-height:95px;
+
+    padding:8px;
+
+}
+
+.signature-image img{
+
+    max-height:40px;
+
+    object-fit:contain;
+
+}
+
+.seal-image img{
+
+    max-height:30px;
+
+    margin:4px 0;
+
+}
+
+.signature-line{
+
+    width:85%;
+
+    border-top:1px solid #777;
+
+    padding-top:8px;
+
+    text-align:center;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+/* ==========================
+   TERMS
+========================== */
+
+.terms-box{
+
+    margin-top:8px;
+
+    border:1px solid #DCC7B7;
+
+}
+
+.terms-content{
+
+    padding:6px 10px;
+
+    font-size:10px;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.invoice-footer{
+
+    margin-top:12px;
+
+    text-align:center;
+
+    font-size:10px;
+
+    color:#666;
+
+}
+
+/* ==========================
+   PRINT
+========================== */
+
+@media print{
+
+    body{
+
+        background:#fff;
+
+    }
+
+    .invoice-overlay{
+
+        position:static;
+
+        background:#fff;
+
+        padding:0;
+
+    }
+
+    .invoice-modal{
+
+        width:100%;
+
+        height:auto;
+
+        box-shadow:none;
+
+        border-radius:0;
+
+        overflow:visible;
+
+    }
+
+    .no-print{
+
+        display:none !important;
+
+    }
+
+    .invoice-paper{
+
+        width:100%;
+
+        min-height:auto;
+
+        padding:0;
+
+    }
+
+    .customer-box,
+    .tax-summary,
+    .invoice-summary,
+    .bank-box,
+    .signature-box,
+    .terms-box{
+
+        page-break-inside:avoid;
+
+    }
+
+    .items-table{
+
+        page-break-inside:auto;
+
+    }
+
+}

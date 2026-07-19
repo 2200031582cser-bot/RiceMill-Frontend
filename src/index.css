@@ -1,0 +1,504 @@
+@import "tailwindcss";
+
+/* =========================
+   SOFT PASTEL DREAM THEME
+========================= */
+
+:root {
+
+  --sage: #B7C2B2;
+  --sage-dark: #A5B09F;
+
+  --blush: #E6D5CB;
+  --almond: #D1BDB0;
+
+  --sand: #F5EFEA;
+  --cloud: #F3F2F5;
+
+  --background: #FAF8F6;
+
+  --card-bg: #FFFFFF;
+
+  --text-dark: #655C56;
+  --text-light: #9A8E85;
+
+  --border: #E8E2DC;
+
+  --shadow:
+    0 8px 30px rgba(
+      130,
+      120,
+      110,
+      0.08
+    );
+
+  --shadow-hover:
+    0 15px 40px rgba(
+      130,
+      120,
+      110,
+      0.12
+    );
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+  margin: 0;
+
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      180deg,
+      #FAF8F6 0%,
+      #F5EFEA 100%
+    );
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    sans-serif;
+
+  color: var(--text-dark);
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  -moz-osx-font-smoothing:
+    grayscale;
+}
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.page {
+
+  display: flex;
+
+  min-height: 100vh;
+}
+
+.page-content {
+
+  flex: 1;
+
+  margin-left: 290px;
+
+  width:
+    calc(
+      100vw - 290px
+    );
+
+  padding: 30px;
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.page-title {
+
+  font-size: 42px;
+
+  font-weight: 700;
+
+  color: var(--text-dark);
+
+  letter-spacing: -1px;
+
+  margin-bottom: 30px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.erp-card {
+
+  background:
+    var(--card-bg);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 28px;
+
+  padding: 24px;
+
+  box-shadow:
+    var(--shadow);
+
+  transition:
+    all 0.3s ease;
+}
+
+.erp-card:hover {
+
+  box-shadow:
+    var(--shadow-hover);
+}
+
+/* =========================
+   KPI CARDS
+========================= */
+
+.kpi-card {
+
+  background:
+    var(--card-bg);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 28px;
+
+  padding: 25px;
+
+  box-shadow:
+    var(--shadow);
+
+  transition:
+    all 0.3s ease;
+}
+
+.kpi-card:hover {
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    var(--shadow-hover);
+}
+
+.kpi-title {
+
+  color:
+    var(--text-light);
+
+  font-size: 14px;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    1px;
+}
+
+.kpi-value {
+
+  font-size: 34px;
+
+  font-weight: 700;
+
+  color:
+    var(--text-dark);
+}
+
+/* =========================
+   CALENDAR
+========================= */
+
+.react-calendar {
+
+  width: 100% !important;
+
+  border: none !important;
+
+  background:
+    white !important;
+
+  border-radius:
+    28px !important;
+
+  padding: 22px !important;
+
+  box-shadow:
+    none !important;
+}
+
+.react-calendar__navigation {
+
+  margin-bottom: 15px;
+}
+
+.react-calendar__navigation button {
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  color:
+    var(--text-dark);
+
+  border-radius: 12px;
+}
+
+.react-calendar__navigation button:hover {
+
+  background:
+    #F5EFEA !important;
+}
+
+.react-calendar__tile {
+
+  padding:
+    18px 0 !important;
+
+  border-radius:
+    14px;
+
+  transition:
+    all 0.25s ease;
+}
+
+.react-calendar__tile:hover {
+
+  background:
+    var(--blush) !important;
+
+  color:
+    var(--text-dark) !important;
+}
+
+.react-calendar__tile--active {
+
+  background:
+    var(--sage) !important;
+
+  color:
+    white !important;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+input,
+select,
+textarea {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border-radius: 14px;
+
+  border:
+    1px solid
+    var(--border);
+
+  background:
+    white;
+
+  color:
+    var(--text-dark);
+
+  transition:
+    all 0.25s ease;
+
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+
+  border-color:
+    var(--sage);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(
+      183,
+      194,
+      178,
+      0.18
+    );
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-primary {
+
+  background:
+    var(--sage);
+
+  color: white;
+
+  border: none;
+
+  border-radius: 14px;
+
+  padding:
+    14px 24px;
+
+  cursor: pointer;
+
+  transition:
+    all 0.3s ease;
+}
+
+.btn-primary:hover {
+
+  background:
+    var(--sage-dark);
+
+  transform:
+    translateY(-1px);
+}
+
+.btn-secondary {
+
+  background:
+    var(--blush);
+
+  color:
+    var(--text-dark);
+
+  border: none;
+
+  border-radius: 14px;
+
+  padding:
+    14px 24px;
+
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+
+  background:
+    var(--almond);
+}
+
+.btn-danger {
+
+  background:
+    #D48383;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 14px;
+
+  padding:
+    14px 24px;
+
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+
+  background:
+    #C06D6D;
+}
+
+/* =========================
+   TABLES
+========================= */
+
+table {
+
+  width: 100%;
+
+  border-collapse:
+    collapse;
+
+  background:
+    white;
+
+  border-radius:
+    20px;
+
+  overflow: hidden;
+}
+
+thead {
+
+  background:
+    var(--almond);
+
+  color: white;
+}
+
+th,
+td {
+
+  padding: 14px;
+}
+
+tbody tr {
+
+  border-bottom:
+    1px solid
+    #F0EBE7;
+}
+
+tbody tr:hover {
+
+  background:
+    #FAF8F6;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+
+  background:
+    transparent;
+}
+
+::-webkit-scrollbar-thumb {
+
+  background:
+    #D8D1CB;
+
+  border-radius:
+    20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+
+  .page-content {
+
+    margin-left: 90px;
+
+    width:
+      calc(
+        100vw - 90px
+      );
+  }
+}
+
+@media (max-width: 768px) {
+
+  .page-content {
+
+    margin-left: 0;
+
+    width: 100%;
+
+    padding: 15px;
+  }
+}
