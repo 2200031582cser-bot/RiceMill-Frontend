@@ -150,7 +150,7 @@ function Sidebar() {
         <SidebarItem
           icon={<FaTachometerAlt />}
           text="Dashboard"
-          link="/"
+          link="/dashboard"
           open={open}
         />
 
