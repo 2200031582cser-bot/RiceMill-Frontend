@@ -36,7 +36,7 @@ function Expenses() {
   try {
 
     const response =
-      api.get(
+      await api.get(
         "/expense/user/${user.id}"
       );
 
@@ -67,7 +67,7 @@ useEffect(() => {
 
     try {
 
-      api.post(
+      await api.post(
   "/expense",
   {
     expenseName,

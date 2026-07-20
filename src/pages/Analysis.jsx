@@ -70,45 +70,45 @@ useState([]);
     try {
 
       const salesResponse =
-          api.get("/sales");
+          await api.get("/sales");
 
       const paddyResponse =
-        api.get(
+        await api.get(
           "/paddy/user/${user.id}"
         );
 
       const brokenRiceResponse =
-        api.get(
+        await api.get(
           "/brokenrice/user/${user.id}"
         );
 
       const expenseResponse =
-        api.get(
+        await api.get(
           "/expense/user/${user.id}"
         );
 
       const employeeResponse =
-        api.get(
+        await api.get(
           "/employee/user/${user.id}"
         );
 
       const attendanceResponse =
-        api.get(
+        await api.get(
           "/attendance/user/${user.id}"
         );
 
       const governmentResponse =
-  api.get(
+  await api.get(
     "/government/user/${user.id}"
   );
 
 const salaryResponse =
-  api.get(
+  await api.get(
     "/salary/user/${user.id}"
   );
 
   const weighBridgeResponse =
-api.get(
+await api.get(
 "/weighbridge/user/${user.id}"
 );
 

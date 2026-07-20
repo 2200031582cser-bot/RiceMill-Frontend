@@ -47,7 +47,7 @@ function WeighBridge() {
     try{
 
       const response =
-      api.get(
+      await api.get(
 
 `/weighbridge/user/${user.id}`
 
@@ -75,7 +75,7 @@ function WeighBridge() {
 
     try{
 
-      api.post(
+      await api.post(
 
 "/weighbridge",
 

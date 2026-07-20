@@ -63,7 +63,7 @@ for (
 
   try {
 
-    api.put(
+    await api.put(
   "/government/deliver-rice",
   {
     userId:user.id,
@@ -102,7 +102,7 @@ for (
     try {
 
       const response =
-        api.get(
+        await api.get(
           `/government/user/${user.id}`
         );
 
@@ -130,7 +130,7 @@ for (
 
     try {
 
-      api.post(
+      await api.post(
   "/government/receive-paddy",
   {
     userId:user.id,

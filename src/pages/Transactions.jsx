@@ -36,7 +36,7 @@ const [toDate, setToDate] =
 
     try {
 
-      const response = api.get(
+      const response = await api.get(
 
   `/paddy/user/${user.id}`
 
@@ -67,7 +67,7 @@ const [toDate, setToDate] =
 
     try {
 
-      api.delete(
+      await api.delete(
         `/paddy/${id}`
       );
 

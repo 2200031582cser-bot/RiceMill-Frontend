@@ -32,7 +32,7 @@ function Signup() {
 
     try {
 
-      api.post(
+      await api.post(
 
         "/auth/signup",
 

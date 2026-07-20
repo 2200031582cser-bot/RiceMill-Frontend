@@ -62,7 +62,7 @@ function Milling() {
     try {
 
       const response =
-        api.get(
+        await api.get(
 
           `/milling/user/${user.id}`
 
@@ -114,7 +114,7 @@ function Milling() {
 
     try{
 
-      api.post(
+      await api.post(
 
         "/milling",
 
@@ -176,7 +176,7 @@ function Milling() {
 
     try{
 
-      api.delete(
+      await api.delete(
 
         `/milling/${id}`
 

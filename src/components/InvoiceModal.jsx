@@ -53,7 +53,7 @@ function InvoiceModal({ invoiceId, onClose }) {
 
     try {
 
-        const response = api.get(
+        const response = await api.get(
             `/company-profile/${user.id}`
         );
 
@@ -73,7 +73,7 @@ function InvoiceModal({ invoiceId, onClose }) {
 
         try {
 
-            const response = api.get(
+            const response = await api.get(
                 `/invoice/${invoiceId}`
             );
 
@@ -141,7 +141,7 @@ function InvoiceModal({ invoiceId, onClose }) {
 
             };
 
-            api.post(
+            await api.post(
 
                 "/invoice",
 

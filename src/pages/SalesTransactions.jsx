@@ -30,7 +30,7 @@ const [invoiceMap, setInvoiceMap] = useState({});
 
     try {
 
-        const response = api.get(
+        const response = await api.get(
             "/sales/user/${user.id}"
         );
 
@@ -44,7 +44,7 @@ for (const record of sales) {
 
     try {
 
-        const invoiceResponse = api.get(
+        const invoiceResponse = await api.get(
 
             "/invoice/sale/${record.sale.id}"
 
@@ -100,7 +100,7 @@ const generateInvoice = async (saleId) => {
 
         else {
 
-            const response = api.post(
+            const response = await api.post(
                 `/invoice/generate/${saleId}`
             );
 
@@ -147,7 +147,7 @@ const generateInvoice = async (saleId) => {
 
         try {
 
-            api.delete(
+            await api.delete(
 
                 `/sales/${id}`
 

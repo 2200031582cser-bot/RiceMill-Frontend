@@ -26,7 +26,7 @@ function Ledger() {
 
     try {
 
-      const response = api.get(
+      const response = await api.get(
         "/ledger-transaction/${ledger.id}"
       );
 
@@ -46,7 +46,7 @@ function Ledger() {
 
     try {
 
-      api.put(
+      await api.put(
         "/ledger/receive-payment/${selectedLedger.id}",
         {
           paymentAmount: Number(paymentAmount)
@@ -72,7 +72,7 @@ function Ledger() {
 
     try {
 
-      const response = api.get(
+      const response = await api.get(
         "/ledger/user/${user.id}"
       );
 

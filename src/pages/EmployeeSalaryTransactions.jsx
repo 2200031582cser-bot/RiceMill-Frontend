@@ -24,7 +24,7 @@ useState("");
 
     try {
 
-      const response = api.get(
+      const response = await api.get(
   `/salary`
 );
 
@@ -56,7 +56,7 @@ const paySalary = async () => {
 
   try {
 
-    api.put(
+    await api.put(
 
       `/salary/pay/${selectedSalary.id}`,
 

@@ -61,7 +61,7 @@ function Sales() {
 
         try {
 
-            const response = api.get(
+            const response = await api.get(
 
                 "/sku/user/${user.id}"
 
@@ -282,7 +282,7 @@ function Sales() {
 
             console.log(request);
 
-            api.post(
+            await api.post(
 
                 "/sales",
 

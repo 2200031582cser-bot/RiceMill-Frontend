@@ -25,7 +25,7 @@ function ExpenseTransactions() {
 
     console.log("USER =", user);
 
-    const response = api.get(
+    const response = await api.get(
       "/expense/user/${user.id}"
     );
 
@@ -63,7 +63,7 @@ function ExpenseTransactions() {
 
     try {
 
-      await api.delete(
+      await await api.delete(
 
         "/expense/${id}"
 

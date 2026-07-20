@@ -44,7 +44,7 @@ function BrokenRice() {
 
     try {
 
-      const response = api.get(
+      const response = await api.get(
 
   "/brokenrice/user/${user.id}"
 
@@ -74,7 +74,7 @@ function BrokenRice() {
 
   try {
 
-    api.post(
+    await api.post(
 
       "/brokenrice",
 

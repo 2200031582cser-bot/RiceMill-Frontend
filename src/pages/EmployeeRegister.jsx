@@ -37,7 +37,7 @@ function EmployeeRegister() {
     try {
 
       const response =
-        api.get(
+        await api.get(
           "/employee/user/${user.id}"
         );
 
@@ -93,7 +93,7 @@ function EmployeeRegister() {
 
     try {
 
-      api.put(
+      await api.put(
 
         `/employee/${selectedEmployee.id}`,
 

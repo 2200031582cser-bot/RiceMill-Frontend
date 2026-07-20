@@ -44,7 +44,7 @@ useState("");
 
   try {
 
-    const response = api.get(
+    const response = await api.get(
 
       `/employee/user/${user.id}`
 
@@ -89,7 +89,7 @@ const fetchSalaryData = async () => {
 
   try {
 
-    const response = api.get(
+    const response = await api.get(
       `/salary`
     );
 
@@ -150,7 +150,7 @@ const fetchSalaryData = async () => {
 
       // FETCH ATTENDANCE SUMMARY
 
-      const response = api.get(
+      const response = await api.get(
 
         `/attendance/summary/${selectedEmployee}/${selectedMonth}`
 
@@ -225,7 +225,7 @@ const paySalary = async () => {
 
     if(!salaryData){
 
-      const response = api.post(
+      const response = await api.post(
 
         "/salary",
 
@@ -270,7 +270,7 @@ const paySalary = async () => {
 
     else {
 
-      api.put(
+      await api.put(
 
         `/salary/pay/${salaryData.id}`,
 

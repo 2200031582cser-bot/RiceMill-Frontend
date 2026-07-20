@@ -98,7 +98,7 @@ function Procurement() {
 
   const fetchPaddy = async () => {
 
-    const response = api.get(
+    const response = await api.get(
 
   "/paddy/user/${user.id}"
 
@@ -119,7 +119,7 @@ function Procurement() {
 
     try {
 
-      api.post(
+      await api.post(
   "/paddy",
   {
     ...paddy,

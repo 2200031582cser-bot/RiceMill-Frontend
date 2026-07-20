@@ -17,7 +17,7 @@ function BrokenRiceTransactions() {
 
     try {
 
-      const response = api.get(
+      const response = await api.get(
 
   "/brokenrice/user/${user.id}"
 
@@ -54,7 +54,7 @@ function BrokenRiceTransactions() {
 
     try {
 
-      api.delete(
+      await api.delete(
         `/brokenrice/${id}`
       );
 

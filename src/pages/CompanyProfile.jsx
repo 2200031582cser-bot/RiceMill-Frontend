@@ -58,7 +58,7 @@ function CompanyProfile() {
 
         try {
 
-            const response = api.get(
+            const response = await api.get(
 
                 `/company-profile/${user.id}`
 
@@ -100,7 +100,7 @@ function CompanyProfile() {
 
             if (company.id) {
 
-                api.put(
+                await api.put(
 
                     `/company-profile/${user.id}`,
 
@@ -112,7 +112,7 @@ function CompanyProfile() {
 
             else {
 
-                api.post(
+                await api.post(
 
                     "/company-profile",
 
@@ -154,7 +154,7 @@ function CompanyProfile() {
 
             );
 
-            const response = api.post(
+            const response = await api.post(
 
                 "/upload/company",
 

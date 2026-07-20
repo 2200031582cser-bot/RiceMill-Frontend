@@ -30,7 +30,7 @@ function SkuMaster() {
 
         try {
 
-            const response = api.get(
+            const response = await api.get(
                 `/sku/user/${user.id}`
             );
 
@@ -64,7 +64,7 @@ function SkuMaster() {
 
     try {
 
-        api.post(
+        await api.post(
 
             "/sku",
 
@@ -106,7 +106,7 @@ const updateSku = async () => {
 
     try {
 
-        api.put(
+        await api.put(
 
             `/sku/${selectedSku.id}`,
 
@@ -149,7 +149,7 @@ const deleteSku = async(id)=>{
 
     try{
 
-        api.delete(
+        await api.delete(
 
             `/sku/${id}`
 

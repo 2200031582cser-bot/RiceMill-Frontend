@@ -46,7 +46,7 @@ function Employees() {
 
     try {
 
-      const response = api.get(
+      const response = await api.get(
   `/employee/user/${user.id}`
 );
 
@@ -78,7 +78,7 @@ function Employees() {
 
     try {
 
-      api.post(
+      await api.post(
   "/employee",
   {
 
@@ -120,7 +120,7 @@ function Employees() {
 
     try {
 
-      api.delete(
+      await api.delete(
 
         `/employee/${id}`
 

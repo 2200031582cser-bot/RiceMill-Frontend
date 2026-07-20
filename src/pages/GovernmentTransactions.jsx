@@ -40,7 +40,7 @@ useState("");
     try {
 
       const response =
-  api.get(
+  await api.get(
     "/government/user/${user.id}"
   );
 
@@ -82,7 +82,7 @@ const updateRecord = async () => {
 
   try {
 
-    api.put(
+    await api.put(
 
       `/government/${selectedRecord.id}`,
 

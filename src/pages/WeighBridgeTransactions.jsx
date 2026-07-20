@@ -53,7 +53,7 @@ function WeighBridgeTransactions() {
 
     try {
 
-      const response = api.get(
+      const response = await api.get(
 
         "/weighbridge/user/${user.id}"
 
@@ -77,7 +77,7 @@ function WeighBridgeTransactions() {
 
     try{
 
-      const response = api.get(
+      const response = await api.get(
 
         "/weighbridge/payment/user/${user.id}"
 
@@ -261,7 +261,7 @@ function WeighBridgeTransactions() {
 
     try{
 
-      api.post(
+      await api.post(
 
 "/weighbridge/payment",
 

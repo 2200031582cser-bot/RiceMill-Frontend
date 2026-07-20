@@ -32,7 +32,7 @@ useState([]);
 
     try {
 
-      const response = api.get(
+      const response = await api.get(
   "/employee/user/${user.id}"
 );
 
@@ -50,7 +50,7 @@ useState([]);
 
   try {
 
-    const response = api.get(
+    const response = await api.get(
       "/attendance/user/${user.id}"
     );
 
@@ -171,7 +171,7 @@ const saveAttendance = async () => {
 
   try {
 
-    api.post(
+    await api.post(
 
       "/attendance/bulk",
 
